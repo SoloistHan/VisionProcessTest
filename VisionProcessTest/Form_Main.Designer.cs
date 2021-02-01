@@ -29,21 +29,35 @@ namespace VisionProcessTest
         /// </summary>
         private void InitializeComponent()
         {
+            this.menuStrip_Main = new System.Windows.Forms.MenuStrip();
             this.SuspendLayout();
+            // 
+            // menuStrip_Main
+            // 
+            this.menuStrip_Main.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip_Main.Name = "menuStrip_Main";
+            this.menuStrip_Main.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip_Main.TabIndex = 0;
+            this.menuStrip_Main.Text = "menuStrip1";
             // 
             // Form_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.menuStrip_Main);
+            this.MainMenuStrip = this.menuStrip_Main;
             this.Name = "Form_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vision Process Test";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.MenuStrip menuStrip_Main;
     }
 }
 

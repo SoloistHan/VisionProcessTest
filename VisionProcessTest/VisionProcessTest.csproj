@@ -46,9 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL_NewObject.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="FastPixel.cs" />
     <Compile Include="Form_Main.cs">
       <SubType>Form</SubType>
