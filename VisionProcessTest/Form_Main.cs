@@ -15,7 +15,12 @@ namespace VisionProcessTest
         public Form_Main()
         {
             InitializeComponent();
-            BLL_NewObject.NewSome(this);
+            InitialObj();
+        }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //
         }
     }
 }
