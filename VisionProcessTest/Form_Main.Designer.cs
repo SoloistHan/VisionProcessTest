@@ -32,6 +32,10 @@ namespace VisionProcessTest
             this.MenuStrip_Main = new System.Windows.Forms.MenuStrip();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PictureBox_Main = new System.Windows.Forms.PictureBox();
+            this.ch01ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.redToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.greenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.blueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStrip_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox_Main)).BeginInit();
             this.SuspendLayout();
@@ -39,7 +43,8 @@ namespace VisionProcessTest
             // MenuStrip_Main
             // 
             this.MenuStrip_Main.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openToolStripMenuItem});
+            this.openToolStripMenuItem,
+            this.ch01ToolStripMenuItem});
             this.MenuStrip_Main.Location = new System.Drawing.Point(0, 0);
             this.MenuStrip_Main.Name = "MenuStrip_Main";
             this.MenuStrip_Main.Size = new System.Drawing.Size(800, 24);
@@ -61,6 +66,37 @@ namespace VisionProcessTest
             this.PictureBox_Main.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.PictureBox_Main.TabIndex = 2;
             this.PictureBox_Main.TabStop = false;
+            // 
+            // ch01ToolStripMenuItem
+            // 
+            this.ch01ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.redToolStripMenuItem,
+            this.greenToolStripMenuItem,
+            this.blueToolStripMenuItem});
+            this.ch01ToolStripMenuItem.Name = "ch01ToolStripMenuItem";
+            this.ch01ToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.ch01ToolStripMenuItem.Text = "Ch_01";
+            // 
+            // redToolStripMenuItem
+            // 
+            this.redToolStripMenuItem.Name = "redToolStripMenuItem";
+            this.redToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.redToolStripMenuItem.Text = "Red";
+            this.redToolStripMenuItem.Click += new System.EventHandler(this.redToolStripMenuItem_Click);
+            // 
+            // greenToolStripMenuItem
+            // 
+            this.greenToolStripMenuItem.Name = "greenToolStripMenuItem";
+            this.greenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.greenToolStripMenuItem.Text = "Green";
+            this.greenToolStripMenuItem.Click += new System.EventHandler(this.greenToolStripMenuItem_Click);
+            // 
+            // blueToolStripMenuItem
+            // 
+            this.blueToolStripMenuItem.Name = "blueToolStripMenuItem";
+            this.blueToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.blueToolStripMenuItem.Text = "Blue";
+            this.blueToolStripMenuItem.Click += new System.EventHandler(this.blueToolStripMenuItem_Click);
             // 
             // Form_Main
             // 
@@ -86,6 +122,10 @@ namespace VisionProcessTest
         private System.Windows.Forms.MenuStrip MenuStrip_Main;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.PictureBox PictureBox_Main;
+        private System.Windows.Forms.ToolStripMenuItem ch01ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem redToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem greenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem blueToolStripMenuItem;
     }
 }
 

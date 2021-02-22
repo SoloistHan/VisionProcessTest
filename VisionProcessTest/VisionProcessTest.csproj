@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Event\Chapter_01.cs" />
     <Compile Include="FastPixel.cs" />
     <Compile Include="Form_Main.cs">
       <SubType>Form</SubType>

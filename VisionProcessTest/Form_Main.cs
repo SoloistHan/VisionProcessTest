@@ -12,6 +12,7 @@ namespace VisionProcessTest
 {
     public partial class Form_Main : Form
     {
+        FastPixel fastPixel = new FastPixel(); 
         public Form_Main()
         {
             InitializeComponent();
@@ -20,7 +21,28 @@ namespace VisionProcessTest
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //
+            OpenFileDialog openFile = new OpenFileDialog();
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                Bitmap bitmap = new Bitmap(openFile.FileName);
+                fastPixel.Bmp2RGB(bitmap);
+                PictureBox_Main.Image = bitmap;
+            }
+        }
+
+        private void redToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CH_01_Red();
+        }
+
+        private void greenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CH_01_Green();
+        }
+
+        private void blueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CH_01_Blue();
         }
     }
 }

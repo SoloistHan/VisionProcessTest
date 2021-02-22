@@ -33,7 +33,7 @@ namespace VisionProcessTest
 
         private void UnlockBMP(Bitmap bmp)
         {
-            Marshal.Copy(RGB, 0, ptr, 0);
+            Marshal.Copy(RGB, 0, ptr, n_All);
             bmp.UnlockBits(ImgData);
         }
 

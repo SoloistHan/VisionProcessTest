@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,9 @@ namespace VisionProcessTest
 
             this.Height = MenuStrip_Main.Height + PictureBox_Main.Height;
             this.Width = PictureBox_Main.Width;
+
+            fastPixel.Bmp2RGB(Properties.Resources.TEST_01);
+            PictureBox_Main.Image = Properties.Resources.TEST_01;
         }
     }
 }
