@@ -30,19 +30,9 @@ namespace VisionProcessTest
             }
         }
 
-        private void redToolStripMenuItem_Click(object sender, EventArgs e)
+        private void reToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CH_01_Red();
-        }
-
-        private void greenToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            CH_01_Green();
-        }
-
-        private void blueToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            CH_01_Blue();
+            PictureBox_Main.Image = Properties.Resources.TEST_01;
         }
     }
 }

@@ -31,11 +31,16 @@ namespace VisionProcessTest
         {
             this.MenuStrip_Main = new System.Windows.Forms.MenuStrip();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.PictureBox_Main = new System.Windows.Forms.PictureBox();
             this.ch01ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.redToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.greenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.blueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rGBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rGLowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.binaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.negativeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.PictureBox_Main = new System.Windows.Forms.PictureBox();
+            this.reToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStrip_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox_Main)).BeginInit();
             this.SuspendLayout();
@@ -43,6 +48,7 @@ namespace VisionProcessTest
             // MenuStrip_Main
             // 
             this.MenuStrip_Main.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.reToolStripMenuItem,
             this.openToolStripMenuItem,
             this.ch01ToolStripMenuItem});
             this.MenuStrip_Main.Location = new System.Drawing.Point(0, 0);
@@ -58,21 +64,16 @@ namespace VisionProcessTest
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
-            // PictureBox_Main
-            // 
-            this.PictureBox_Main.Location = new System.Drawing.Point(389, 200);
-            this.PictureBox_Main.Name = "PictureBox_Main";
-            this.PictureBox_Main.Size = new System.Drawing.Size(100, 50);
-            this.PictureBox_Main.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.PictureBox_Main.TabIndex = 2;
-            this.PictureBox_Main.TabStop = false;
-            // 
             // ch01ToolStripMenuItem
             // 
             this.ch01ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.redToolStripMenuItem,
             this.greenToolStripMenuItem,
-            this.blueToolStripMenuItem});
+            this.blueToolStripMenuItem,
+            this.rGBToolStripMenuItem,
+            this.rGLowToolStripMenuItem,
+            this.binaryToolStripMenuItem,
+            this.negativeToolStripMenuItem});
             this.ch01ToolStripMenuItem.Name = "ch01ToolStripMenuItem";
             this.ch01ToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.ch01ToolStripMenuItem.Text = "Ch_01";
@@ -97,6 +98,50 @@ namespace VisionProcessTest
             this.blueToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.blueToolStripMenuItem.Text = "Blue";
             this.blueToolStripMenuItem.Click += new System.EventHandler(this.blueToolStripMenuItem_Click);
+            // 
+            // rGBToolStripMenuItem
+            // 
+            this.rGBToolStripMenuItem.Name = "rGBToolStripMenuItem";
+            this.rGBToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.rGBToolStripMenuItem.Text = "RGB";
+            this.rGBToolStripMenuItem.Click += new System.EventHandler(this.rGBToolStripMenuItem_Click);
+            // 
+            // rGLowToolStripMenuItem
+            // 
+            this.rGLowToolStripMenuItem.Name = "rGLowToolStripMenuItem";
+            this.rGLowToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.rGLowToolStripMenuItem.Text = "RG Low";
+            this.rGLowToolStripMenuItem.Click += new System.EventHandler(this.rGLowToolStripMenuItem_Click);
+            // 
+            // binaryToolStripMenuItem
+            // 
+            this.binaryToolStripMenuItem.Name = "binaryToolStripMenuItem";
+            this.binaryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.binaryToolStripMenuItem.Text = "Binary";
+            this.binaryToolStripMenuItem.Click += new System.EventHandler(this.binaryToolStripMenuItem_Click);
+            // 
+            // negativeToolStripMenuItem
+            // 
+            this.negativeToolStripMenuItem.Name = "negativeToolStripMenuItem";
+            this.negativeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.negativeToolStripMenuItem.Text = "Negative";
+            this.negativeToolStripMenuItem.Click += new System.EventHandler(this.negativeToolStripMenuItem_Click);
+            // 
+            // PictureBox_Main
+            // 
+            this.PictureBox_Main.Location = new System.Drawing.Point(389, 200);
+            this.PictureBox_Main.Name = "PictureBox_Main";
+            this.PictureBox_Main.Size = new System.Drawing.Size(100, 50);
+            this.PictureBox_Main.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.PictureBox_Main.TabIndex = 2;
+            this.PictureBox_Main.TabStop = false;
+            // 
+            // reToolStripMenuItem
+            // 
+            this.reToolStripMenuItem.Name = "reToolStripMenuItem";
+            this.reToolStripMenuItem.Size = new System.Drawing.Size(34, 20);
+            this.reToolStripMenuItem.Text = "Re";
+            this.reToolStripMenuItem.Click += new System.EventHandler(this.reToolStripMenuItem_Click);
             // 
             // Form_Main
             // 
@@ -126,6 +171,11 @@ namespace VisionProcessTest
         private System.Windows.Forms.ToolStripMenuItem redToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem greenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem blueToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rGBToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rGLowToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem binaryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem negativeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reToolStripMenuItem;
     }
 }
 
