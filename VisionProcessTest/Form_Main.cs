@@ -34,5 +34,11 @@ namespace VisionProcessTest
         {
             PictureBox_Main.Image = Properties.Resources.TEST_01;
         }
+
+        private void PictureBox_Main_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (ch02_Control = true)
+                ch02_FFA(e);
+        }
     }
 }
