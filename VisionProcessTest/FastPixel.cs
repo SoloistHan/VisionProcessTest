@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace VisionProcessTest
 {
+    
     public class FastPixel
     {
         public int nx, ny;
@@ -17,6 +19,8 @@ namespace VisionProcessTest
         BitmapData ImgData;
         IntPtr ptr;
         int n_All, n_Line, n_Byte;  // 影像總位元組數 ; 單行位元組數 ; 單點位元組數
+
+        
 
         private void  LockBMP(Bitmap bmp)
         {

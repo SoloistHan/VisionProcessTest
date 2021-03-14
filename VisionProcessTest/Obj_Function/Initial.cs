@@ -19,6 +19,7 @@ namespace VisionProcessTest
             this.Width = PictureBox_Main.Width;
 
             fastPixel.Bmp2RGB(Properties.Resources.TEST_01);
+            B = fastPixel.Gv; // Ch04
             PictureBox_Main.Image = Properties.Resources.TEST_01;
         }
     }

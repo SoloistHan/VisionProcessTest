@@ -45,6 +45,12 @@ namespace VisionProcessTest
             this.aveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.binaryToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.outlineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ch04ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.binary04ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.outline04ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.targetsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.filterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PictureBox_Main = new System.Windows.Forms.PictureBox();
             this.MenuStrip_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox_Main)).BeginInit();
@@ -56,7 +62,8 @@ namespace VisionProcessTest
             this.reToolStripMenuItem,
             this.openToolStripMenuItem,
             this.ch01ToolStripMenuItem,
-            this.ch02ToolStripMenuItem});
+            this.ch02ToolStripMenuItem,
+            this.ch04ToolStripMenuItem});
             this.MenuStrip_Main.Location = new System.Drawing.Point(0, 0);
             this.MenuStrip_Main.Name = "MenuStrip_Main";
             this.MenuStrip_Main.Size = new System.Drawing.Size(800, 24);
@@ -154,30 +161,77 @@ namespace VisionProcessTest
             // grayGreenToolStripMenuItem
             // 
             this.grayGreenToolStripMenuItem.Name = "grayGreenToolStripMenuItem";
-            this.grayGreenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.grayGreenToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.grayGreenToolStripMenuItem.Text = "GrayGreen";
             this.grayGreenToolStripMenuItem.Click += new System.EventHandler(this.grayGreenToolStripMenuItem_Click);
             // 
             // aveToolStripMenuItem
             // 
             this.aveToolStripMenuItem.Name = "aveToolStripMenuItem";
-            this.aveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aveToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.aveToolStripMenuItem.Text = "Ave";
             this.aveToolStripMenuItem.Click += new System.EventHandler(this.aveToolStripMenuItem_Click);
             // 
             // binaryToolStripMenuItem1
             // 
             this.binaryToolStripMenuItem1.Name = "binaryToolStripMenuItem1";
-            this.binaryToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.binaryToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
             this.binaryToolStripMenuItem1.Text = "Binary";
             this.binaryToolStripMenuItem1.Click += new System.EventHandler(this.binaryToolStripMenuItem1_Click);
             // 
             // outlineToolStripMenuItem
             // 
             this.outlineToolStripMenuItem.Name = "outlineToolStripMenuItem";
-            this.outlineToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.outlineToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.outlineToolStripMenuItem.Text = "Outline";
             this.outlineToolStripMenuItem.Click += new System.EventHandler(this.outlineToolStripMenuItem_Click);
+            // 
+            // ch04ToolStripMenuItem
+            // 
+            this.ch04ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.binary04ToolStripMenuItem,
+            this.outline04ToolStripMenuItem,
+            this.targetsToolStripMenuItem,
+            this.filterToolStripMenuItem,
+            this.sortToolStripMenuItem});
+            this.ch04ToolStripMenuItem.Name = "ch04ToolStripMenuItem";
+            this.ch04ToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.ch04ToolStripMenuItem.Text = "Ch-04";
+            // 
+            // binary04ToolStripMenuItem
+            // 
+            this.binary04ToolStripMenuItem.Name = "binary04ToolStripMenuItem";
+            this.binary04ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.binary04ToolStripMenuItem.Text = "Binary_04";
+            this.binary04ToolStripMenuItem.Click += new System.EventHandler(this.binary04ToolStripMenuItem_Click);
+            // 
+            // outline04ToolStripMenuItem
+            // 
+            this.outline04ToolStripMenuItem.Name = "outline04ToolStripMenuItem";
+            this.outline04ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.outline04ToolStripMenuItem.Text = "Outline_04";
+            this.outline04ToolStripMenuItem.Click += new System.EventHandler(this.outline04ToolStripMenuItem_Click);
+            // 
+            // targetsToolStripMenuItem
+            // 
+            this.targetsToolStripMenuItem.Name = "targetsToolStripMenuItem";
+            this.targetsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.targetsToolStripMenuItem.Text = "Targets";
+            this.targetsToolStripMenuItem.Click += new System.EventHandler(this.targetsToolStripMenuItem_Click);
+            // 
+            // filterToolStripMenuItem
+            // 
+            this.filterToolStripMenuItem.Name = "filterToolStripMenuItem";
+            this.filterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.filterToolStripMenuItem.Text = "Filter";
+            this.filterToolStripMenuItem.Click += new System.EventHandler(this.filterToolStripMenuItem_Click);
+            // 
+            // sortToolStripMenuItem
+            // 
+            this.sortToolStripMenuItem.Name = "sortToolStripMenuItem";
+            this.sortToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sortToolStripMenuItem.Text = "Sort";
+            this.sortToolStripMenuItem.Click += new System.EventHandler(this.sortToolStripMenuItem_Click);
             // 
             // PictureBox_Main
             // 
@@ -227,6 +281,12 @@ namespace VisionProcessTest
         private System.Windows.Forms.ToolStripMenuItem grayGreenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem binaryToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem outlineToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ch04ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem targetsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem filterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sortToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem binary04ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem outline04ToolStripMenuItem;
     }
 }
 
