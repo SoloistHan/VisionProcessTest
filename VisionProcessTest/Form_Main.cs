@@ -37,8 +37,10 @@ namespace VisionProcessTest
 
         private void PictureBox_Main_MouseDown(object sender, MouseEventArgs e)
         {
-            if (ch02_Control = true)
+            if (ch02_Control == true)
                 ch02_FFA(e);
+            else if (ch04_Control == true)
+                ch04_AreaData(e);
         }
 
         

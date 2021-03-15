@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace VisionProcessTest
 {
@@ -20,6 +21,7 @@ namespace VisionProcessTest
     }
     public partial class Form_Main
     {
+        bool ch04_Control = false;
         byte[,] B; // 灰階陣列
         byte[,] Z_ch04; // 二值化陣列
         byte[,] Q_ch04; // 輪廓線陣列
@@ -29,6 +31,47 @@ namespace VisionProcessTest
         Bitmap Mb;
 
 //---------------------------------------------------------------------------------------------------------------------------
+
+        private void ch04_AreaData(MouseEventArgs e)
+        {
+            if (Mb == null)
+                return;
+            if (e.Button == MouseButtons.Left)
+            {
+                int m = -1;
+                for (int each = 0; each < C_ch04.Count; each++)
+                {
+                    TgInfo tgInfo = (TgInfo)C_ch04[each];
+                    if (e.X < tgInfo.xmn)
+                        continue;
+                    if (e.X > tgInfo.xmx)
+                        continue;
+                    if (e.Y < tgInfo.ymn)
+                        continue;
+                    if (e.Y > tgInfo.ymx)
+                        continue;
+                    m = each;
+                    break;
+                }
+
+                if (m >= 0)
+                {
+                    Bitmap bitmap = (Bitmap)Mb.Clone();
+                    TgInfo tgInfo = (TgInfo)C_ch04[m];
+                    for (int each = 0; each < tgInfo.P.Count; each++)
+                    {
+                        Point p = (Point)tgInfo.P[each];
+                        bitmap.SetPixel(p.X, p.Y, Color.Red);
+                    }
+                    PictureBox_Main.Image = bitmap;
+                    string S = $"Width = {tgInfo.width.ToString()} \n\r";
+                    S += $"Height = {tgInfo.height.ToString()} \n\r";
+                    S += $"Contrast = {tgInfo.pm.ToString()} \n\r";
+                    S += $"Point = {tgInfo.np.ToString()} ";
+                    MessageBox.Show(S);
+                }
+            }
+        }
 
         private void binary04ToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -226,7 +269,62 @@ namespace VisionProcessTest
 
         private void sortToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            for (int First = 0; First < C_ch04.Count; First++)
+            {
+                TgInfo tgInfo = (TgInfo)C_ch04[First];
+                for (int Second = 0; Second < tgInfo.P.Count; Second++)
+                {
+                    int pm = PointPm((Point)tgInfo.P[Second]);
+                    if (pm > tgInfo.pm)
+                        tgInfo.pm = pm;
+                }
+                C_ch04[First] = tgInfo;
+            }
 
+            for (int First = 0; First < 10; First++)
+            {
+                for (int Second = First + 1; Second < C_ch04.Count; Second++)
+                {
+                    TgInfo tgInfo = (TgInfo)C_ch04[First], G = (TgInfo)C_ch04[Second];
+                    if (tgInfo.pm < G.pm)
+                    {
+                        C_ch04[First] = G;
+                        C_ch04[Second] = tgInfo;
+                    }
+                }
+            }
+
+            Bitmap bitmap = new Bitmap(fastPixel.nx, fastPixel.ny);
+            for (int First = 0; First < 10; First++)
+            {
+                TgInfo tgInfo = (TgInfo)C_ch04[First];
+                for (int Second = 0; Second < tgInfo.P.Count; Second++)
+                {
+                    Point p = (Point)tgInfo.P[Second];
+                    bitmap.SetPixel(p.X, p.Y, Color.Black);
+                }
+                C_ch04[First] = tgInfo;
+            }
+            PictureBox_Main.Image = bitmap;
+            Mb = (Bitmap)bitmap.Clone();
+            ch04_Control = true;
+        }
+
+        private int PointPm(Point p) // 輪廓與背景的對比度
+        {
+            int x = p.X, y = p.Y, mx = B[x, y];
+            if (mx < B[x - 1, y])
+                mx = B[x - 1, y];
+
+            if (mx < B[x + 1, y])
+                mx = B[x + 1, y];
+
+            if (mx < B[x, y - 1])
+                mx = B[x, y - 1];
+
+            if (mx < B[x, y + 1])
+                mx = B[x, y + 1];
+            return mx - B[x, y];
         }
     }
 }
