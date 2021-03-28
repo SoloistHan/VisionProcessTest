@@ -9,18 +9,24 @@ namespace VisionProcessTest
 {
     public partial class Form_Main
     {
-        private void InitialObj()
+        byte[,] B; // 灰階陣列
+        private void InitialObj(Bitmap input)
         {
             PictureBox_Main.Top = MenuStrip_Main.Height;
             PictureBox_Main.Left = 0;
-            PictureBox_Main.Image = VisionProcessTest.Properties.Resources.TEST_01;
+            PictureBox_Main.Image = input;
+            //PictureBox_Main.Image = VisionProcessTest.Properties.Resources.TEST_01;
 
-            this.Height = MenuStrip_Main.Height + PictureBox_Main.Height;
+            this.Height = MenuStrip_Main.Height + PictureBox_Main.Height + 50;
             this.Width = PictureBox_Main.Width;
-
-            fastPixel.Bmp2RGB(Properties.Resources.TEST_01);
+            if (this.Width < 360)
+                this.Width = 360;
+            
+            //fastPixel.Bmp2RGB(Properties.Resources.TEST_01);
+            fastPixel.Bmp2RGB(input);
             B = fastPixel.Gv; // Ch04
-            PictureBox_Main.Image = Properties.Resources.TEST_01;
+            PictureBox_Main.Image = input;
+            //PictureBox_Main.Image = Properties.Resources.TEST_01;
         }
     }
 }

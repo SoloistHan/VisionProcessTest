@@ -48,6 +48,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Event\Chapter_05.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Event\Chapter_04.cs" />
     <Compile Include="Event\Chapter_0203.cs">
       <SubType>Form</SubType>
@@ -93,7 +96,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Right_01.jpg" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\TEST_01.jpg" />
   </ItemGroup>

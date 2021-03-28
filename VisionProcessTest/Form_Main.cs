@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,7 +17,11 @@ namespace VisionProcessTest
         public Form_Main()
         {
             InitializeComponent();
-            InitialObj();
+            InitialObj(VisionProcessTest.Properties.Resources.TEST_01);
+
+            //ArrayList nc = new ArrayList(); // 每一輪搜尋的起點集合
+            //nc.Add(new Point(15, 99));
+            //TgInfo tgInfo = (TgInfo)nc[0];
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)

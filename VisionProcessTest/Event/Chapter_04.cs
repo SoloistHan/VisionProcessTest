@@ -17,12 +17,13 @@ namespace VisionProcessTest
         public int width = 0, height = 0;
         public int pm = 0;
         public int cx = 0;
+        public int cy = 0;
         public int ID = 0;
     }
     public partial class Form_Main
     {
         bool ch04_Control = false;
-        byte[,] B; // 灰階陣列
+        
         byte[,] Z_ch04; // 二值化陣列
         byte[,] Q_ch04; // 輪廓線陣列
         int Gdim_ch04 = 25; // 計算區域亮度區塊的寬與高
@@ -75,7 +76,7 @@ namespace VisionProcessTest
 
         private void binary04ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Th_ch04 = ThresholdBuild(B);
+            Th_ch04 = ThresholdBuild(B, Gdim_ch04, Th_ch04);
             Z_ch04 = new byte[fastPixel.nx, fastPixel.ny];
             for (int First = 0; First < fastPixel.nx - 1; First++)
             {
@@ -89,28 +90,28 @@ namespace VisionProcessTest
             }
             PictureBox_Main.Image = fastPixel.BinaryImg(Z_ch04);
         }
-        private int[,] ThresholdBuild(byte[,] b)
+        private int[,] ThresholdBuild(byte[,] b, int Gdim, int[,] Th)
         {
-            int kx = fastPixel.nx / Gdim_ch04, ky = fastPixel.ny / Gdim_ch04;
-            Th_ch04 = new int[kx, ky];
+            int kx = fastPixel.nx / Gdim, ky = fastPixel.ny / Gdim;
+            Th = new int[kx, ky];
 
             for (int First = 0; First < fastPixel.nx; First++)
             {
-                int x = First / Gdim_ch04;
+                int x = First / Gdim;
                 for (int Second = 0; Second < fastPixel.ny; Second++)
                 {
-                    int y = Second / Gdim_ch04;
-                    Th_ch04[x, y] += fastPixel.Gv[First, Second];
+                    int y = Second / Gdim;
+                    Th[x, y] += fastPixel.Gv[First, Second];
                 }
             }
             for (int First = 0; First < kx; First++)
             {
                 for (int Second = 0; Second < ky; Second++)
                 {
-                    Th_ch04[First, Second] /= Gdim_ch04 * Gdim_ch04;
+                    Th[First, Second] /= Gdim * Gdim;
                 }
             }
-            return Th_ch04;
+            return Th;
         }
 //---------------------------------------------------------------------------------------------------------------------------
 

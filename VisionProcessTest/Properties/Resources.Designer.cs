@@ -63,6 +63,16 @@ namespace VisionProcessTest.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap Right_01 {
+            get {
+                object obj = ResourceManager.GetObject("Right_01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap TEST_01 {
             get {
                 object obj = ResourceManager.GetObject("TEST_01", resourceCulture);
