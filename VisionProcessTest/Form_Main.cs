@@ -17,11 +17,13 @@ namespace VisionProcessTest
         public Form_Main()
         {
             InitializeComponent();
-            InitialObj(VisionProcessTest.Properties.Resources.TEST_01);
+            //InitialObj(VisionProcessTest.Properties.Resources.TEST_01);
 
-            //ArrayList nc = new ArrayList(); // 每一輪搜尋的起點集合
-            //nc.Add(new Point(15, 99));
-            //TgInfo tgInfo = (TgInfo)nc[0];
+            Bitmap bitmap = new Bitmap(@"D:\TEST\Test_004.bmp");
+            //Bitmap bitmap = new Bitmap(@"D:\Soloist\Project\EPISIL\20200507_Camera_\Picture\20201118_FD-9360\20201118_Front\20201118_163553_TEST.bmp");
+            //Bitmap bitmap = new Bitmap(@"D:\Soloist\Project\EPISIL\20200507_Camera_\Picture\20200716\getimg_027.bmp");
+            InitialObj(bitmap);
+            this.AutoScroll = true;
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)

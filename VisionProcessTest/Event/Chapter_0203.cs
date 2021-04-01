@@ -12,7 +12,7 @@ namespace VisionProcessTest
     {
         bool ch02_Control = false;
 
-        int ch02_Gdim = 25;  // 將影像分成40*40區塊 做計算  (該直須能將影像長寬"除盡")
+        int ch02_Gdim = 40;  // 將影像分成40*40區塊 做計算  (該直須能將影像長寬"除盡")
         int[,] ch02_Th;  // 每區塊平均亮度
         byte[,] Z;
         byte[,] Q;

@@ -26,7 +26,7 @@ namespace VisionProcessTest
         
         byte[,] Z_ch04; // 二值化陣列
         byte[,] Q_ch04; // 輪廓線陣列
-        int Gdim_ch04 = 25; // 計算區域亮度區塊的寬與高
+        int Gdim_ch04 = 10; // 計算區域亮度區塊的寬與高
         int[,] Th_ch04; // 每區塊平均亮度 
         ArrayList C_ch04; // 目標物件集合
         Bitmap Mb;
@@ -92,7 +92,20 @@ namespace VisionProcessTest
         }
         private int[,] ThresholdBuild(byte[,] b, int Gdim, int[,] Th)
         {
-            int kx = fastPixel.nx / Gdim, ky = fastPixel.ny / Gdim;
+            int kx = 0;
+            int ky = 0;
+
+//--------此段可避免邊界未除盡導致out of range------------
+            if (fastPixel.nx % Gdim == 0)
+                kx = fastPixel.nx / Gdim;
+            else
+                kx = ((fastPixel.nx - (fastPixel.nx % Gdim)) / Gdim) + 1;
+            if (fastPixel.ny % Gdim == 0)
+                ky = fastPixel.ny / Gdim;
+            else
+                ky = ((fastPixel.ny - (fastPixel.ny % Gdim)) / Gdim) + 1;
+//-------------------------------------------------------------
+
             Th = new int[kx, ky];
 
             for (int First = 0; First < fastPixel.nx; First++)

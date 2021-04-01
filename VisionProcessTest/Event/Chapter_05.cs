@@ -13,14 +13,18 @@ namespace VisionProcessTest
     {
         bool ch05_Control = false;
 
-        int minH_05 = 20, maxH_05 = 80;
-        int minW_05 = 2, maxW_05 = 80;
+        int minH_05 = 25, maxH_05 = 40;
+        int minW_05 = 18, maxW_05 = 60;
         int Tgmax_05 = 20;
+
+        //int minH_05 = 20, maxH_05 = 80;
+        //int minW_05 = 2, maxW_05 = 80;
+        //int Tgmax_05 = 20;
 
         byte[,] Z_ch05; // 二值化陣列
         byte[,] Q_ch05; // 輪廓線陣列
         //int Gdim_ch05 = 40; // 計算區域亮度區塊的寬與高
-        int Gdim_ch05 = 25;
+        int Gdim_ch05 = 10; // 20210330 EPISIL_Camera setting value = 10
         int[,] Th_ch05; // 每區塊平均亮度 
         ArrayList C_ch05; // 目標物件集合
         Bitmap Mb_ch05;
@@ -58,7 +62,8 @@ namespace VisionProcessTest
         {
             C_ch05 = getTargets_05(Q_ch05);
             Bitmap bitmap = new Bitmap(fastPixel.nx, fastPixel.ny);
-            for (int First = 0; First <= 10; First++)
+            //for (int First = 0; First <= 10; First++)
+            for (int First = 0; First < C_ch05.Count; First++)
             {
                 TgInfo tgInfo = (TgInfo)C_ch05[First];
                 for (int Second = 0; Second < tgInfo.P.Count; Second++)
@@ -132,7 +137,7 @@ namespace VisionProcessTest
                         continue;
                     if (G.width < minW_05)
                         continue;
-                    if (G.width > maxH_05)
+                    if (G.width > maxW_05)
                         continue;
                     G.cx = (G.xmn + G.xmx) / 2;
                     G.cy = (G.ymn + G.ymx) / 2;
@@ -140,7 +145,7 @@ namespace VisionProcessTest
                     for(int Third = 0; Third < G.P.Count; Third++)
                     {
                         int pm = PointPm((Point)G.P[Third]);
-                        if (pm > G.pm)
+                        if (pm > G.pm) //取得高對比 輪廓點
                             G.pm = pm;
                     }
                     A.Add(G);
@@ -153,7 +158,7 @@ namespace VisionProcessTest
                 for (int Second = First + 1; Second < A.Count ; Second++)
                 {
                     TgInfo T = (TgInfo)A[First], G = (TgInfo)A[Second];
-                    if (T.pm < G.pm)
+                    if (T.pm < G.pm) // 互換位置 高對比目標在前
                     {
                         A[First] = G;
                         A[Second] = T;
@@ -185,12 +190,12 @@ namespace VisionProcessTest
                 TgInfo T = (TgInfo)R[First];
                 if (First == 0) //搜尋的中心目標畫成實心
                 {
-                    for (int Second = T.xmn; Second < T.xmx; Second++)
+                    for (int Second = T.xmn; Second <= T.xmx; Second++)
                     {
-                        for (int Third = T.ymn; Third < T.ymx; Third++)
+                        for (int Third = T.ymn; Third <= T.ymx; Third++)
                         {
                             if (Z_ch05[Second, Third] == 1)
-                                bmp.SetPixel(Second, Third, Color.Red);
+                                bmp.SetPixel(Second, Third, Color.Yellow);
 
                         }
                     }
@@ -222,10 +227,10 @@ namespace VisionProcessTest
                 D.Add(tgInfo);
                 Dm = tgInfo.pm;
 
-                int x1 = (int)(tgInfo.cx - tgInfo.height * 2.5); //搜尋X範圍
-                int x2 = (int)(tgInfo.cx + tgInfo.height * 2.5); //搜尋X範圍
-                int y1 = (int)(tgInfo.cy - tgInfo.height * 1.5); //搜尋Y範圍
-                int y2 = (int)(tgInfo.cy + tgInfo.height * 1.5); //搜尋Y範圍
+                int x1 = (int)(tgInfo.cx - tgInfo.height * 2); //搜尋X範圍
+                int x2 = (int)(tgInfo.cx + tgInfo.height * 2); //搜尋X範圍
+                int y1 = (int)(tgInfo.cy - tgInfo.height * 1); //搜尋Y範圍
+                int y2 = (int)(tgInfo.cy + tgInfo.height * 1); //搜尋Y範圍
 
                 for (int Second = 0; Second < C.Count; Second++)
                 {
@@ -241,9 +246,12 @@ namespace VisionProcessTest
                         continue;
                     if (G.cy > y2)
                         continue;
+                    if (G.width > tgInfo.height) continue;
+                    //if (G.height > T.height * 1.5) continue;
+                    if (G.height > tgInfo.height) continue;
                     D.Add(G);
                     Dm += G.pm; // 合格目標加入集合
-                    if (D.Count >= 7)
+                    if (D.Count >= 4)
                         break;
                 }
                 if (Dm > pmx)

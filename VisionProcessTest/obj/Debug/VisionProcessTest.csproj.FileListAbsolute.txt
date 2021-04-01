@@ -8,3 +8,13 @@ D:\CodeWatch\Test\VisionProcessTest\VisionProcessTest\obj\Debug\VisionProcessTes
 D:\CodeWatch\Test\VisionProcessTest\VisionProcessTest\obj\Debug\VisionProcessTest.csproj.CoreCompileInputs.cache
 D:\CodeWatch\Test\VisionProcessTest\VisionProcessTest\obj\Debug\VisionProcessTest.exe
 D:\CodeWatch\Test\VisionProcessTest\VisionProcessTest\obj\Debug\VisionProcessTest.pdb
+D:\Soloist\C#\VisionProcessTest\VisionProcessTest\bin\Debug\VisionProcessTest.exe.config
+D:\Soloist\C#\VisionProcessTest\VisionProcessTest\bin\Debug\VisionProcessTest.exe
+D:\Soloist\C#\VisionProcessTest\VisionProcessTest\bin\Debug\VisionProcessTest.pdb
+D:\Soloist\C#\VisionProcessTest\VisionProcessTest\obj\Debug\VisionProcessTest.csprojAssemblyReference.cache
+D:\Soloist\C#\VisionProcessTest\VisionProcessTest\obj\Debug\VisionProcessTest.Form_Main.resources
+D:\Soloist\C#\VisionProcessTest\VisionProcessTest\obj\Debug\VisionProcessTest.Properties.Resources.resources
+D:\Soloist\C#\VisionProcessTest\VisionProcessTest\obj\Debug\VisionProcessTest.csproj.GenerateResource.cache
+D:\Soloist\C#\VisionProcessTest\VisionProcessTest\obj\Debug\VisionProcessTest.csproj.CoreCompileInputs.cache
+D:\Soloist\C#\VisionProcessTest\VisionProcessTest\obj\Debug\VisionProcessTest.exe
+D:\Soloist\C#\VisionProcessTest\VisionProcessTest\obj\Debug\VisionProcessTest.pdb
